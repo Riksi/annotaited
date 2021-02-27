@@ -7,10 +7,11 @@ categories: jekyll update
 
 ## Introduction
 
-In the previous tutorial we learned how to how build a transformer model. Now it is time to put it into action. There are lots of things we can do with a transformer but we will start off with a machine translation task to translate from Spanish to English.
+In [Part 1]({% post_url 2021-02-18-transformer %}) of the tutorial we learned how to how build a transformer model. Now it is time to put it into action. There are lots of things we can do with a transformer but we will start off with a machine translation task to translate from Spanish to English.
 
 The code for Parts 1 and 2 of this tutorial can be found in [this Colab notebook](https://colab.research.google.com/drive/1hKF_544jqNXJFONYXNwNTrL-zDE4wUpb?usp=sharing).
 
+If you notice any problems or mistakes please raise an issue [here](https://github.com/Riksi/annotaited).
 
 ### Acknowledgements
 This tutorial like the previous was inspired by [The Annotated Transformer](http://nlp.seas.harvard.edu/2018/04/03/attention.html).
@@ -740,12 +741,14 @@ for epoch in range(config.epochs):
 
 ## Inference
 
-So our model has trained for a bit. The loss has dropped and the accuracy has risen but what do the translations actually look like. To answer that question we need to write one more function. Add a `predict_step` function to `Trainer` that takes a single input sequence and returns the predicted sequence along with attention maps. Remember to stop predicting for a sequence when an `<end>` token has been predicted.
+So our model has trained for a bit. The loss has dropped and the accuracy has risen but what do the translations actually look like. To answer that question we need to write one more function. Write `predict_sequence` that takes a single input sequence and returns the predicted sequence along with attention maps. 
 
 Hints:
+- To start the prediction input a `start_symbol` i.e. `inp_tkn.word_index["<start>"]`
+- At each step you should select the token which has the highest softmax prediction, append that to the existing translation and pass that in as the input to decoder.
+- Remember to stop predicting for a sequence when an `<end>` token has been predicted.
 - Remember that we defined `encode` and `decode` methods for the model. Use these instead of `call` to avoid having to predict the encoder output repeatedly.
 - However the decoder must be re-run for every step.
-- To start the prediction input a `start_symbol` i.e. `inp_tkn.word_index["<start>"]`
 
 <div markdown="0" class="collapse-predict_sequence">
 <div markdown="1">
@@ -883,6 +886,12 @@ plot_attention_weights(inp_sent_full.split(),
 
 ![plot showing attention weights for all heads from a single decoder attention layer]({{site.baseurl}}/assets/Transformer/plot_weights.png)
 
+## What's next
+There are many ways this model can be extended. We can modify the architecture or use a different dataset. Metrics like BLEU will give us a better idea of the model's performance. At inference time we are using a simple greedy approach choosing just the best prediction at each timestep which might not necessary lead to the best overall translation. In the paper they use beam search which stores a small number of thee top predictions at each stage searches for the best overall translation among these and this typically yields better results.
+
+This is only the tip of the iceberg with regard to what Transformers are and what they can do. Many [extensions](https://arxiv.org/abs/1901.02890) [to](https://arxiv.org/abs/1807.0319) [the](https://arxiv.org/abs/1810.04805) original architecture have been developed and there are many more applications outside of NLP (such as [image](https://arxiv.org/abs/2010.11929) [recognition](https://arxiv.org/abs/2101.11605) and [image](https://arxiv.org/abs/2012.09841) [generation](https://arxiv.org/abs/2102.07074)). I have just linked to a handful that came to mind but there are many more. 
+
+I hope to cover some of these extensions through future tutorials. In the meantime I encourage you to experiment with making your own changes to the model.
 
 ## References 
 1. [Attention Is All You Need](https://arxiv.org/abs/1706.03762)

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Transformer Part 1: Build"
-date:   2020-08-04 19:52:13 +0100
+date:   2021-02-18 19:52:13 +0100
 categories: jekyll update
 ---
 ## Introduction
@@ -11,7 +11,7 @@ Since its introduction in [Attention Is All You Need](https://arxiv.org/abs/1706
 
 The code for Parts 1 and 2 of this tutorial can be found in [this Colab notebook](https://colab.research.google.com/drive/1hKF_544jqNXJFONYXNwNTrL-zDE4wUpb?usp=sharing).
 
-If you notice any problems or mistakes please raise an issue [here].
+If you notice any problems or mistakes please raise an issue [here](https://github.com/Riksi/annotaited).
 
 ## Motivation
 > Attention mechanisms have become an integral part of compelling sequence modeling and transduction models in various tasks, allowing modeling of dependencies without regard to their distance in the input or output sequences [2, 19]. In all but a few cases [27], however, such attention mechanisms are used in conjunction with a recurrent network.
@@ -406,7 +406,7 @@ Now write a `TargetMask` class that inherits from `SequenceMask` does the follow
 - Combines these so that `combined_mask[:, j] = False` if position `j` is padding else `combined_mask[:, j] = future_mask[i, j]`
 - Returns a `(batch_size, 1, sequence_length, sequence_length)` tensor that is suitable for using in `scaled_dot_product_attention`
 
-<div class="collapse-subsequent_mask">
+<div class="collapse-TargetMask">
 <div markdown="1">
 ```python
 class TargetMask(SequenceMask):
@@ -750,7 +750,7 @@ class Transformer(tf.keras.models.Model):
 </div>
 
 ## What's next
-We have built a `Transformer` but we are not done yet. The paper introduces some approaches to train the model and we need to implement those and we need to write to code to prepare the data and to process the outputs. In [Part 2](TODO: add link) we will learn how to do all of these and train a translation model.
+We have built a `Transformer` but we are not done yet. The paper introduces some approaches to train the model and we need to implement those and we need to write to code to prepare the data and to process the outputs. In [Part 2]({% post_url 2021-02-19-transformer-translation %}) we will learn how to do all of these and train a translation model.
 
 
 ## References 
