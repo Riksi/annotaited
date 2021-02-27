@@ -1,0 +1,58 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+
+  {%- seo -%}
+  <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src='{{ "/assets/shared/collapse/collapse.js" | relative_url }}'></script>
+  <script src='{{ "/assets/shared/slider/slider.js" | relative_url }}'></script>
+  <link rel="stylesheet" href='{{ "/assets/shared/collapse/collapse.css" | relative_url }}'>
+  <link rel="stylesheet" href='{{ "/assets/shared/slider/slider.css" | relative_url }}'>
+  <style></style>
+  
+ 
+  <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
+  <style>
+    blockquote{
+      margin: 1rem; 
+    }
+    blockquote p {
+      /* padding: .5rem; */
+      /* border-color: black;
+      border: 1px solid; */
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      /* border-radius: .25rem; */
+      /* margin: 1rem; */
+      color: #555;
+      font-style: normal;
+      letter-spacing: normal;
+    }
+  </style>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ["\\(", "\\)"] ],
+      displayMath: [ ['$$', '$$'], ["\\[", "\\]"] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+    //,
+    //displayAlign: "left",
+    //displayIndent: "2em"
+  });
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  {%- feed_meta -%}
+  {%- if jekyll.environment == 'production' and site.google_analytics -%}
+    {%- include google-analytics.html -%}
+  {%- endif -%}
+
+  {%- include slider.html -%}
+</head>

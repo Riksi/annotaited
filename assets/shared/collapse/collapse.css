@@ -1,0 +1,53 @@
+button[class^=collapse], button#toggle-active{
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    border: 1px solid transparent;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    }
+    button#toggle-active{
+      right:0;
+      position: fixed;
+      border-radius: 0;
+      background-color: #458;
+      border-color:#458;
+      top: -2px;
+      border: none;
+      opacity: 70%;
+      display: none;
+      transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    }
+
+    /* @media screen and (min-width: 600px) {
+      button#toggle-active{
+      right:0;
+      }
+    } */
+    button#toggle-active:hover{
+      opacity: 90%;
+    }
+    div[class^=collapse]{
+      display: none;
+      margin-bottom: 0.25rem;
+    }
+      div[class^=collapse] ul{
+        margin-bottom: 0;
+      }
+      div[class^=collapse] .textblock{
+        border-radius: .25rem;
+        
+        background-color:#418ef31c;
+        padding: .75rem;
+      }
