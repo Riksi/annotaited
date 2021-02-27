@@ -31,7 +31,7 @@ function makeSlider(slider, captions, imgs, name){
             slide.style.display='none';
         }
         slide.querySelector('.text').innerText = caption;
-        slide.querySelector('img').src = "/active-learning/assets/" + name + '/' + imgs[idx];
+        slide.querySelector('img').src = "/annotaited/assets/" + name + '/' + imgs[idx];
         slider.appendChild(slide);
     })
 
