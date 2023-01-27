@@ -2,7 +2,7 @@
 layout: post
 title:  "Transformer Part 2: Train a Translation Model"
 date:   2021-02-19 19:52:13 +0100
-categories: jekyll update
+categories: transformer
 ---
 
 ## Introduction
@@ -20,6 +20,10 @@ It also borrows and adapts code for data preparation, saving, plotting and other
 
 1. TensorFlow's RNN-based translation tutorial: [https://www.tensorflow.org/tutorials/text/nmt_with_attention](https://www.tensorflow.org/tutorials/text/nmt_with_attention)
 2. TensorFlow's Transformer tutorial: [https://www.tensorflow.org/tutorials/text/transformer](https://www.tensorflow.org/tutorials/text/transformer)
+
+## Contents
+* This will become a table of contents (this text will be scrapped).
+{:toc}
 
 ## Optimisation
 > We used the Adam optimizer [20] with $\beta_1 = 0.9$, $\beta_2 = 0.98$ and $\epsilon = 10$.

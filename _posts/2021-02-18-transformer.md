@@ -2,7 +2,7 @@
 layout: post
 title:  "Transformer Part 1: Build"
 date:   2021-02-18 19:52:13 +0100
-categories: jekyll update
+categories: transformer
 ---
 ## Introduction
 ![Part of the first page of 'Attention Is All You Need' showing the title and abstract]({{site.baseurl}}/assets/Transformer/abs.png)
@@ -12,6 +12,11 @@ Since its introduction in [Attention Is All You Need](https://arxiv.org/abs/1706
 The code for Parts 1 and 2 of this tutorial can be found in [this Colab notebook](https://colab.research.google.com/drive/1hKF_544jqNXJFONYXNwNTrL-zDE4wUpb?usp=sharing).
 
 If you notice any problems or mistakes please raise an issue [here](https://github.com/Riksi/annotaited).
+
+## Contents
+* This will become a table of contents (this text will be scrapped).
+{:toc}
+
 
 ## Motivation
 > Attention mechanisms have become an integral part of compelling sequence modeling and transduction models in various tasks, allowing modeling of dependencies without regard to their distance in the input or output sequences [2, 19]. In all but a few cases [27], however, such attention mechanisms are used in conjunction with a recurrent network.
